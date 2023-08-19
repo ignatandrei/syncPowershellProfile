@@ -29,4 +29,22 @@ jobs:
         ls -lh
         npm i
         npm run build 
-    
+        
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        name: docusaurusBuild
+        path: 'documentation/syncPowershell/build/*'
+        retention-days: 1
+
+    - name: upload documentation to github pages
+      run: |
+        cp -r documentation/syncPowershell/build/* docs/
+
+    - uses: EndBug/add-and-commit@v9
+      with:
+        message: 'Deploy documentation'
+        default_author: github_actions
+        cwd: './docs'
+
+      
