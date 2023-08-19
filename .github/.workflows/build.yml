@@ -20,7 +20,11 @@ jobs:
         # cache: 'npm'
     - run: |
         cd documentation  
+        echo 'in documentation'
+        ls -lh
         cd syncPowershell       
+        echo 'in docusaurus'
+        ls -lh
         npm i
         npm run build 
     
