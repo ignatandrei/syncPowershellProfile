@@ -19,7 +19,14 @@ jobs:
         node-version: 18.17.1
         # cache: 'npm'
     - run: |
-        cd documentation         
+        echo 'start'
+        ls -lh
+        cd documentation  
+        echo 'in documentation'
+        ls -lh
+        cd syncPowershell       
+        echo 'in docusaurus'
+        ls -lh
         npm i
         npm run build 
     
