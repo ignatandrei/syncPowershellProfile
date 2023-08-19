@@ -19,6 +19,8 @@ jobs:
         node-version: 18.17.1
         # cache: 'npm'
     - run: |
+        echo 'start'
+        ls -lh
         cd documentation  
         echo 'in documentation'
         ls -lh
