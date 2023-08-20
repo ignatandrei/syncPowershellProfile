@@ -12,3 +12,5 @@ From his PC the user will have a powershell to send  $PROFILE.CurrentUserCurrent
 ## Use Case 2: Authenticated user .
 
 Same with UseCase 1 , just the user is authenticated first with user name + pwd and his profile will remain. 
+
+
