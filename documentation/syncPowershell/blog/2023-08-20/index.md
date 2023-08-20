@@ -1,4 +1,4 @@
-import ADR001 from '../ADR/ADR001.md'
+import ADR001 from '../../docs/ADR/ADR001.md'
 
 # Documentation 
 

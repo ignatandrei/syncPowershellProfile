@@ -1,4 +1,4 @@
-import ADR002 from '../ADR/ADR002.md'
+import ADR002 from '../../docs/ADR/ADR002.md'
 
 # General Architecture 
 

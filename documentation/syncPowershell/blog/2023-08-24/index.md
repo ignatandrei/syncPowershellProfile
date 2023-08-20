@@ -1,6 +1,6 @@
-import UseCase001 from '../UseCases/UseCase001.md'
-import UseCase003 from '../UseCases/UseCase003.md'
-import UseCase004 from '../UseCases/UseCase004.md'
+import UseCase001 from '../../docs/UseCases/UseCase001.md'
+import UseCase003 from '../../docs/UseCases/UseCase003.md'
+import UseCase004 from '../../docs/UseCases/UseCase004.md'
 
 # Use Cases as mermaid
 
