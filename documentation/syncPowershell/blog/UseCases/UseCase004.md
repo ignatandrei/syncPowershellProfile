@@ -1,5 +1,6 @@
 ## Use case 4:  List of users
 
+User can  the page /u and find the list of all users.
 
 ```mermaid
 sequenceDiagram
