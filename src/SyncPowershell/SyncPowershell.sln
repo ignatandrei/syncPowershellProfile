@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncPowershellTests", "SyncPowershellTests\SyncPowershellTests.csproj", "{8D9D4387-6C0B-4A7B-B243-077A61ED21DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SyncPowershellTests", "SyncPowershellTests\SyncPowershellTests.csproj", "{8D9D4387-6C0B-4A7B-B243-077A61ED21DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "syncPowershellObjects", "syncPowershellObjects\syncPowershellObjects.csproj", "{BB9F8983-2295-4E91-93C6-5B2CDB94414C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8D9D4387-6C0B-4A7B-B243-077A61ED21DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D9D4387-6C0B-4A7B-B243-077A61ED21DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D9D4387-6C0B-4A7B-B243-077A61ED21DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB9F8983-2295-4E91-93C6-5B2CDB94414C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB9F8983-2295-4E91-93C6-5B2CDB94414C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB9F8983-2295-4E91-93C6-5B2CDB94414C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB9F8983-2295-4E91-93C6-5B2CDB94414C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

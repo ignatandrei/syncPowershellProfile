@@ -6,3 +6,4 @@ global using LightBDD.Framework.Reporting.Formatters;
 global using LightBDD.Framework.Scenarios;
 global using LightBDD.XUnit2;
 global using System.Text;
+global using LightBDD.Framework.Configuration;

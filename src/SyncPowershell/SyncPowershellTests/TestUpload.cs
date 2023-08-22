@@ -11,12 +11,18 @@ public partial class TestUpload
     [Scenario]
     [Label("Ticket-1")]
     [ScenarioCategory("TestOnePC")]
-    public void TestOnePC()
+    public async Task TestOnePC()
     {
-        Runner.RunScenario(
-            Given_the_info_about_default_powershell_profile, //scenario steps
-            When_the_user_want_to_sent,
-            Then_the_login_operation_should_be_successful
-            );
+        await Runner
+            .AddAsyncSteps(
+            _ =>Given_the_info_about_default_powershell_profile(),
+            _ => When_the_user_want_to_sent()
+            )
+            .AddSteps(
+                Then_the_return_value_should_be_an_URL
+            ).RunAsync();
+
+
+
     }
 }
