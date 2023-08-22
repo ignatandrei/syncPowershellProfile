@@ -2,46 +2,33 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Tutorial
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover **syncPowerShellProfile**.
+
+If you want to synchronize your Powershell profile, please see  [Getting Started](#getting-started) .
+
+If you are a programmer, you may be interested in [ADR](/docs/category/adr) or in [UseCases](docs/category/usecase)  or [GitHub](https://github.com/ignatandrei/syncPowershellProfile)
+
+### You'll need Powershell 
+
+On Windows >= 10 it is already installed. Press WindowsLogo + R and write powershell .
+
+For Mac / Linux , you can install from https://aka.ms/PSWindows .
 
 ## Getting Started
 
-Get started by **creating a new site**.
+Execute the IWR instruction in powershell 
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+and that's all !
 
-### What you'll need
+Now , on other PC, you can execute this IWR instruction to synchronize
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
 
-## Generate a new site
+## Generate a new powershell to sync
 
-Generate a new Docusaurus site using the **classic template**.
+Move to a new PC and execute again [Getting Started](#getting-started)
+## ABOUT
 
-The classic template will automatically be added to your project after you run the command:
+Made by Andrei Ignat, http://msprogrammer.serviciipeweb.ro/
 
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
