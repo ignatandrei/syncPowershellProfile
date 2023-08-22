@@ -50,6 +50,8 @@ const config = {
         blog: {
           showReadingTime: true,
           postsPerPage: 'ALL',
+          blogSidebarCount:'ALL',
+          
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl:
@@ -104,16 +106,8 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'GitHub Issues',
+                href: 'https://github.com/ignatandrei/syncPowershellProfile/discussions',
               },
             ],
           },
