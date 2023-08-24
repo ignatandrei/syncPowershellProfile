@@ -6,4 +6,23 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+	<PropertyGroup>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GX</CompilerGeneratedFilesOutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup >
+	  <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+	  <WarningsNotAsErrors>CA1416</WarningsNotAsErrors>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+	  <WarningsNotAsErrors>CA1416</WarningsNotAsErrors>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="RSCG_Static" Version="2023.8.23.2100" />
+	</ItemGroup>
+
+
 </Project>

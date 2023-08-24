@@ -12,7 +12,7 @@
  * (as long as class does not implement IClassFixture<T> nor ICollectionFixture<T> attribute
  * nor have defined named collection [Collection] attribute)
  */
-[assembly: ClassCollectionBehavior(AllowTestParallelization = true)]
+[assembly: ClassCollectionBehavior(AllowTestParallelization = false)]
 
 namespace Example.LightBDD.XUnit2;
 
@@ -29,9 +29,13 @@ internal class ConfiguredLightBddScopeAttribute : LightBddScopeAttribute
     /// </summary>
     protected override void OnConfigure(LightBddConfiguration configuration)
     {
+         
         configuration
             .ReportWritersConfiguration()
             .AddFileWriter<XmlReportFormatter>("~\\Reports\\FeaturesReport.xml")
-            .AddFileWriter<PlainTextReportFormatter>("~\\Reports\\{TestDateTimeUtc:yyyy-MM-dd-HH_mm_ss}_FeaturesReport.txt");
+            .AddFileWriter<PlainTextReportFormatter>("~\\Reports\\{TestDateTimeUtc:yyyy-MM-dd-HH_mm_ss}_FeaturesReport.txt")
+            .AddFileWriter<HtmlReportFormatter>("~\\Reports\\{TestDateTimeUtc:yyyy-MM-dd-HH_mm_ss}_FeaturesReport.html")
+            ;
+            
     }
 }
