@@ -15,11 +15,11 @@ public partial class TestUpload
     {
         await Runner            
             .AddAsyncSteps(
-            _ =>Given_NoPowershellProfile7_IsFound(),
-            _ => When_the_user_want_to_sent()
+            _ => Given_NoPowershellProfile7_IsFound_For_UserName_PC(userName,pc),
+            _ => When_the_data_is_sent()
             )
             .AddSteps(
-                _=>Then_the_return_value_should_be_an_URL_Ending_In_UserName_And_PC(userName,pc)
+                _=>Then_the_return_value_should_be_an_URL_Ending_In_UserName_PC(userName,pc)
             ).RunAsync();
 
 

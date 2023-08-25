@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "build": "dotnet build --configuration Release",
+    "test": "dotnet dotnet-dotcover test --dcXml=dotnetcover.xml",
+    "ci": "dotnet r build && dotnet r test"
+  }
+}
