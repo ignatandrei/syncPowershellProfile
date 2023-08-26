@@ -36,18 +36,6 @@ jobs:
         name: docusaurusBuild
         path: 'documentation/syncPowershell/build/*'
         retention-days: 1
-    
-    - name: upload documentation to github pages
-      if: ${{ github.ref == 'refs/heads/main' }}
-      run: |
-        cp -r documentation/syncPowershell/build/* docs/
-
-    - uses: EndBug/add-and-commit@v9
-      if: ${{ github.ref == 'refs/heads/main' }}
-      with:
-        message: 'Deploy documentation'
-        default_author: github_actions
-        cwd: './docs'
 
     - name: build .NET 
       run: |
@@ -56,3 +44,16 @@ jobs:
         dotnet restore
         dotnet tool restore
         dotnet r test
+
+    - name: upload documentation to github pages
+      if: ${{ github.ref == 'refs/heads/main' }}
+      run: |
+        cp -r documentation/syncPowershell/build/* docs/
+        
+
+    - uses: EndBug/add-and-commit@v9
+      if: ${{ github.ref == 'refs/heads/main' }}
+      with:
+        message: 'Deploy documentation'
+        default_author: github_actions
+        cwd: './docs'

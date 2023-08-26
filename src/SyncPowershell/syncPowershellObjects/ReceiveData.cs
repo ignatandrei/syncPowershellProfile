@@ -13,7 +13,7 @@ public class ReceiveData
         await Task.Delay(1000);
         string ret=hostname+"/view/v1/" + data.UserName + "/" + data.PC;
         if(string.IsNullOrWhiteSpace(data.Powershell ))return ret;
-        ret += "/" + 1;
+        ret += "/" + data.PowershellNumber;
         return ret;
     }
 }
