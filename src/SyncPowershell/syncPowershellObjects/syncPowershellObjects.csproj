@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<PropertyGroup>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GX</CompilerGeneratedFilesOutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+	  <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+	  <WarningsNotAsErrors>CA1416</WarningsNotAsErrors>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="RSCG_Static" Version="2023.8.23.2100" />
+		<PackageReference Include="Refit" Version="7.0.0" />
+	</ItemGroup>
+
+
+</Project>

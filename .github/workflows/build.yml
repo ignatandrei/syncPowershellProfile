@@ -13,6 +13,11 @@ jobs:
     - name: code
       uses: actions/checkout@v3
     
+    - name: Setup .NET Core SDK 
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+
     - name: Use Node.js 
       uses: actions/setup-node@v3
       with:
@@ -32,10 +37,19 @@ jobs:
         path: 'documentation/syncPowershell/build/*'
         retention-days: 1
 
+    - name: build .NET 
+      run: |
+        cd  src
+        cd SyncPowershell
+        dotnet restore
+        dotnet tool restore
+        dotnet r test
+
     - name: upload documentation to github pages
       if: ${{ github.ref == 'refs/heads/main' }}
       run: |
         cp -r documentation/syncPowershell/build/* docs/
+        
 
     - uses: EndBug/add-and-commit@v9
       if: ${{ github.ref == 'refs/heads/main' }}
@@ -43,5 +57,3 @@ jobs:
         message: 'Deploy documentation'
         default_author: github_actions
         cwd: './docs'
-
-      
