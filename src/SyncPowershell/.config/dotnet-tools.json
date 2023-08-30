@@ -19,6 +19,12 @@
       "commands": [
         "pwsh"
       ]
+    },
+    "netpackageanalyzerconsole": {
+      "version": "7.2023.830.921",
+      "commands": [
+        "PackageAnalyzer"
+      ]
     }
   }
 }

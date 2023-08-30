@@ -1,0 +1,8 @@
+{
+  "label": "Technical Docs",
+  "position": 60,
+  "link": {
+    "type": "generated-index",
+    "description": "packages, projects , tests..."
+  }
+}
