@@ -4,10 +4,18 @@
         <title>Powershell Sync Profile Blog</title>
         <link>https://your-docusaurus-test-site.com/syncPowershellProfile/blog</link>
         <description>Powershell Sync Profile Blog</description>
-        <lastBuildDate>Mon, 28 Aug 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 29 Aug 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Analysis of the project]]></title>
+            <link>https://your-docusaurus-test-site.com/syncPowershellProfile/blog/2023/08/29/index</link>
+            <guid>https://your-docusaurus-test-site.com/syncPowershellProfile/blog/2023/08/29/index</guid>
+            <pubDate>Tue, 29 Aug 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[Before starting writing API, I want to generate data about what I have created - packages, reference , tests .]]></description>
+            <content:encoded><![CDATA[<p>Before starting writing API, I want to generate data about what I have created - packages, reference , tests .</p><p>For tests, I have copied the PlainTextReportFormatter from <a href="https://github.com/LightBDD/LightBDD/blob/c07341ea8dc90d5c2dae74650d9bdad848978100/src/LightBDD.Framework/Reporting/Formatters/PlainTextReportFormatter.cs#L19" target="_blank" rel="noopener noreferrer">https://github.com/LightBDD/LightBDD/blob/c07341ea8dc90d5c2dae74650d9bdad848978100/src/LightBDD.Framework/Reporting/Formatters/PlainTextReportFormatter.cs#L19</a></p><p>and </p><ol><li>modified a bit ( put # in front of Summary , Scenario , Feature, )</li><li>Commented new TextTableRenderer , TextTreeRenderer.Render for later use</li></ol><p>And voila!</p><p>For analyzing the project I use <a href="https://github.com/ignatandrei/PackageAnalyzer" target="_blank" rel="noopener noreferrer">https://github.com/ignatandrei/PackageAnalyzer</a> .</p><p>This will export the package references, the relations between packages, the packages with differences in the major ...</p><p>The result is here:</p><p><a href="https://ignatandrei.github.io/syncPowershellProfile/docs/category/technical-docs" target="_blank" rel="noopener noreferrer">https://ignatandrei.github.io/syncPowershellProfile/docs/category/technical-docs</a></p>]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[Code Coverage]]></title>
             <link>https://your-docusaurus-test-site.com/syncPowershellProfile/blog/2023/08/28/index</link>

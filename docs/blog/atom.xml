@@ -2,11 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://your-docusaurus-test-site.com/syncPowershellProfile/blog</id>
     <title>Powershell Sync Profile Blog</title>
-    <updated>2023-08-28T00:00:00.000Z</updated>
+    <updated>2023-08-29T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://your-docusaurus-test-site.com/syncPowershellProfile/blog"/>
     <subtitle>Powershell Sync Profile Blog</subtitle>
     <icon>https://your-docusaurus-test-site.com/syncPowershellProfile/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Analysis of the project]]></title>
+        <id>https://your-docusaurus-test-site.com/syncPowershellProfile/blog/2023/08/29/index</id>
+        <link href="https://your-docusaurus-test-site.com/syncPowershellProfile/blog/2023/08/29/index"/>
+        <updated>2023-08-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Before starting writing API, I want to generate data about what I have created - packages, reference , tests .]]></summary>
+        <content type="html"><![CDATA[<p>Before starting writing API, I want to generate data about what I have created - packages, reference , tests .</p><p>For tests, I have copied the PlainTextReportFormatter from <a href="https://github.com/LightBDD/LightBDD/blob/c07341ea8dc90d5c2dae74650d9bdad848978100/src/LightBDD.Framework/Reporting/Formatters/PlainTextReportFormatter.cs#L19" target="_blank" rel="noopener noreferrer">https://github.com/LightBDD/LightBDD/blob/c07341ea8dc90d5c2dae74650d9bdad848978100/src/LightBDD.Framework/Reporting/Formatters/PlainTextReportFormatter.cs#L19</a></p><p>and </p><ol><li>modified a bit ( put # in front of Summary , Scenario , Feature, )</li><li>Commented new TextTableRenderer , TextTreeRenderer.Render for later use</li></ol><p>And voila!</p><p>For analyzing the project I use <a href="https://github.com/ignatandrei/PackageAnalyzer" target="_blank" rel="noopener noreferrer">https://github.com/ignatandrei/PackageAnalyzer</a> .</p><p>This will export the package references, the relations between packages, the packages with differences in the major ...</p><p>The result is here:</p><p><a href="https://ignatandrei.github.io/syncPowershellProfile/docs/category/technical-docs" target="_blank" rel="noopener noreferrer">https://ignatandrei.github.io/syncPowershellProfile/docs/category/technical-docs</a></p>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Code Coverage]]></title>
         <id>https://your-docusaurus-test-site.com/syncPowershellProfile/blog/2023/08/28/index</id>
