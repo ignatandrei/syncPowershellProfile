@@ -6,6 +6,8 @@
  * or customize it in a way that is shown below.
  */
 
+using SyncPowershellTests;
+
 [assembly: Example.LightBDD.XUnit2.ConfiguredLightBddScope]
 /*
  * This is a LightBDD specific, experimental attribute enabling inter-class test parallelization
@@ -32,10 +34,12 @@ internal class ConfiguredLightBddScopeAttribute : LightBddScopeAttribute
          
         configuration
             .ReportWritersConfiguration()
-            .AddFileWriter<XmlReportFormatter>("~\\Reports\\FeaturesReport.xml")
-            .AddFileWriter<PlainTextReportFormatter>("~\\Reports\\{TestDateTimeUtc:yyyy-MM-dd-HH_mm_ss}_FeaturesReport.txt")
-            .AddFileWriter<HtmlReportFormatter>("~\\Reports\\{TestDateTimeUtc:yyyy-MM-dd-HH_mm_ss}_FeaturesReport.html")
-            ;
-            
+                        .AddFileWriter<XmlReportFormatter>("~\\Reports\\FeaturesReport.xml")
+                        .AddFileWriter<PlainTextReportFormatter>("~\\Reports\\{TestDateTimeUtc:yyyy-MM-dd-HH_mm_ss}_FeaturesReport.txt")
+                        .AddFileWriter<HtmlReportFormatter>("~\\Reports\\{TestDateTimeUtc:yyyy-MM-dd-HH_mm_ss}_FeaturesReport.html")
+                        .AddFileWriter<MarkdownReporter>("~\\Reports\\{TestDateTimeUtc:yyyy-MM-dd-HH_mm_ss}_TestReport.md")
+                        //.AddFileWriter<MarkdownReporter>("~\\Reports\\FeaturesReport.md")
+;
+
     }
 }
