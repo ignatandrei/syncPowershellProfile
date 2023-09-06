@@ -1,6 +1,6 @@
 ﻿
 namespace SyncPowershellTests;
-partial class TestUpload : FeatureFixture
+partial class TestUploadAndRetrieve : FeatureFixture
 {
     DataToBeSent? data;
     string? url;

@@ -3,13 +3,13 @@ namespace SyncPowershellTests;
 [FeatureDescription(
 @"In order to sync powershell profile
 As an anonymous
-I want to send my powershell profile")] //feature description
-[Label("ADR001")]
-public partial class TestUpload
+I want to send my powershell profile
+and retrieve data")] //feature description
+public partial class TestUploadAndRetrieve
 {
     
     [Scenario]
-    [Label("Ticket-1")]
+    [Label("UseCase002")]
     [ScenarioCategory("TestOnePC")]
     public async Task TestOnePC_No_Powershell()
     {
@@ -26,7 +26,7 @@ public partial class TestUpload
 
     }
     [Scenario]
-    [Label("Ticket-2")]
+    [Label("UseCase001")]
     [ScenarioCategory("TestOnePC")]
     public async Task TestOnePC_Powershell7_Exists()
     {
