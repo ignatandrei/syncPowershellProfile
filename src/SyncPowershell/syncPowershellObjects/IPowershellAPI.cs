@@ -9,5 +9,5 @@ public interface IPowershellAPI
     Task<string> getPCs(string userName);
     
     [Get("/api/v1/getData/{userName}/{pcName}/{powershellNumber}")]
-    Task<string> GetData(string userName, string pcName, string powershellNumber);
+    Task<string> GetData(string userName, string pcName, int powershellNumber);
 }

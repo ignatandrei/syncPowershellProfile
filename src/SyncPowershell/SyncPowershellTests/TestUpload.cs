@@ -32,7 +32,7 @@ public partial class TestUploadAndRetrieve
     {
         await Runner
             .AddAsyncSteps(
-            _ => Given_PowershellProfile7_IsFound_For_UserName_PC(userName, pc),
+            _ => Given_PowershellProfile7_IsFound_For_UserName_PC(userName, pc,"text"),
             _ => When_the_data_is_sent()
             )
             .AddSteps(
@@ -42,4 +42,27 @@ public partial class TestUploadAndRetrieve
 
 
     }
+    [Scenario]
+    [Label("UseCase003")]
+    [ScenarioCategory("TestOnePC")]
+    public async Task TestOnePC_Powershell7_Exists_RetrieveData()
+    {
+        await Runner
+            .AddAsyncSteps(
+            _ => Given_PowershellProfile7_IsFound_For_UserName_PC(userName, pc,"text"),
+            _ => When_the_data_is_sent()
+            )
+            .AddSteps(
+                _ => Then_the_return_value_should_be_an_URL_Ending_In_UserName_PC_With_ID(userName, pc)
+            )
+            .AddAsyncSteps(
+            _=> Then_Can_Retrieve_Data(userName,pc,7,"text")
+            )
+            .RunAsync();
+
+
+
+    }
+
+    
 }
