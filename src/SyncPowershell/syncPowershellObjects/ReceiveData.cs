@@ -10,7 +10,7 @@ public class ReceiveData
         this.saveData = saveData;
         this.hostname = hostname;
     }
-    public async Task<string> SaveData(DataToBeSent data) 
+    public async Task<string> SaveData(IDataToBeSent data) 
     {
         await saveData.SaveData(data);
         //await Task.Delay(1000);

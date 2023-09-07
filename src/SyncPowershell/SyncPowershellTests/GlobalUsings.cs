@@ -11,4 +11,6 @@ global using System.ComponentModel.DataAnnotations;
 global using FluentAssertions;
 global using syncPowershellObjects;
 global using System;
+global using syncPowershellInterfaces;
+
 

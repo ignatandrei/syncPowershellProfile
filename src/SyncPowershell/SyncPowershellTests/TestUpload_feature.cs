@@ -52,13 +52,13 @@ partial class TestUploadAndRetrieve : FeatureFixture
     private async Task When_the_data_is_sent()
     {
         var saveData = Rock.Create<ISaveData>();
-        saveData.Methods().SaveData(Arg.Any<DataToBeSent>())
+        saveData.Methods().SaveData(Arg.Any<IDataToBeSent>())
             .Callback(it=>Task.FromResult(true));
 
         var api = Rock.Create<IPowershellAPI>();
-        api.Methods().SendData(Arg.Any<DataToBeSent>())
+        api.Methods().SendData(Arg.Any<IDataToBeSent>())
             .Callback(a => new ReceiveData(saveData.Instance(),"https://azure.powershellsync.com").SaveData(a));
-            ;
+            ; 
         DataUpload dataUpload = new(api.Instance());
         dataUpload.data = data!;
         url=await dataUpload.Send();

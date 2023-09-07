@@ -1,9 +1,9 @@
-﻿namespace syncPowershellObjects;
+﻿namespace syncPowershellInterfaces;
 
 public interface IPowershellAPI
 {
     [Post("/api/v1/sendData")]
-    Task<string> SendData([Body]DataToBeSent data);
+    Task<string> SendData([Body]IDataToBeSent data);
 
     [Get("/api/v1/getPCs/{userName}/")]
     Task<string> getPCs(string userName);

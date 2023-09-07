@@ -1,4 +1,4 @@
-﻿namespace syncPowershellObjects;
+﻿namespace syncPowershellInterfaces;
 
 public interface IRetrieveData
 {
