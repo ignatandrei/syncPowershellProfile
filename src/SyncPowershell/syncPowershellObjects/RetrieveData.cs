@@ -1,6 +1,6 @@
-﻿namespace SyncPowershellTests;
+﻿namespace syncPowershellObjects;
 
-internal class RetrieveData
+public class RetrieveData
 {
     private readonly IRetrieveData retrieveData;
     private string userName;
@@ -13,7 +13,7 @@ internal class RetrieveData
         this.pc = pc;
     }
 
-    internal Task<string> GetPwsh(int pwshNumber)
+    public Task<string> GetPwsh(int pwshNumber)
     {
         return retrieveData.RetrieveData(userName, pc, pwshNumber);
     }
