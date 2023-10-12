@@ -1,5 +1,5 @@
-﻿
-using Microsoft.VisualStudio.TestPlatform.TestHost;
+﻿using NLog.Config;
+using Xunit.Sdk;
 
 namespace SyncPowershellTests;
 partial class TestUploadAndRetrieve : FeatureFixture
@@ -8,15 +8,24 @@ partial class TestUploadAndRetrieve : FeatureFixture
     public TestUploadAndRetrieve(ITestOutputHelper outputHelper)
     {
         var loggerOutput = outputHelper.BuildLoggerFor<TestUploadAndRetrieve>();
-        var config = new NLog.Config.LoggingConfiguration();
+        //simple way
+        //ILoggerFactory factory = LoggerFactory.Create(builder =>builder.AddNLog());
+        NLog.LogFactory f = new NLog.LogFactory();
+        NLog.SetupBuilderExtensions.LoadConfigurationFromFile(f.Setup(),"nlog.config");
+        var config = new NLog.Config.LoggingConfiguration(f);
 
-        //LogManager.Configuration = config;
-        ILoggerFactory factory = LoggerFactory.Create(builder =>builder.AddNLog());
-        
+        var target = new XunitLoggerTarget(outputHelper);
+        config.AddTarget("Xunit", target);
+
+        config.LoggingRules.Add(new LoggingRule("*", NLog.LogLevel.Trace, target));
+
+        ILoggerFactory factory = LoggerFactory.Create(b => b.AddNLog(config));
         logger = new CompositeLogger(factory.CreateLogger<TestUploadAndRetrieve>(), loggerOutput);
         //this.outputHelper = outputHelper;
+
+
         logger.LogInformation("start test " + nameof(TestUploadAndRetrieve));
-        NLog.LogManager.Flush();
+        NLog.LogManager.Flush(); 
 
     }
     DataToBeSent? data;
