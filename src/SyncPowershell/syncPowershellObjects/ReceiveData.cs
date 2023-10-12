@@ -1,14 +1,16 @@
 ﻿namespace syncPowershellObjects;
 
-public class ReceiveData
+public partial class ReceiveData
 {
     private readonly ISaveData saveData;
     private readonly string hostname;
+    private readonly ILogger logger;
 
-    public ReceiveData(ISaveData saveData, string hostname)
+    public ReceiveData(ISaveData saveData, string hostname, ILogger logger)
     {
         this.saveData = saveData;
         this.hostname = hostname;
+        this.logger = logger;
     }
     public async Task<string> SaveData(IDataToBeSent data) 
     {
