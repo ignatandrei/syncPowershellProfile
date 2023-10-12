@@ -1,13 +1,42 @@
-﻿
+﻿using NLog.Config;
+using Xunit.Sdk;
+
 namespace SyncPowershellTests;
 partial class TestUploadAndRetrieve : FeatureFixture
 {
+    ILogger logger;
+    public TestUploadAndRetrieve(ITestOutputHelper outputHelper)
+    {
+        //var loggerOutput = outputHelper.BuildLoggerFor<TestUploadAndRetrieve>();
+        //simple way
+        //ILoggerFactory factory = LoggerFactory.Create(builder =>builder.AddNLog());
+        NLog.LogFactory f = new NLog.LogFactory();
+        var config = new NLog.Config.LoggingConfiguration(f);
+
+        var target = new XunitLoggerTarget(outputHelper);
+        config.AddTarget("Xunit", target);
+
+        config.LoggingRules.Add(new LoggingRule("*", NLog.LogLevel.Trace, target));
+
+        ILoggerFactory factory = LoggerFactory.Create(b => b.AddNLog(config));
+        logger = factory.CreateLogger<TestUploadAndRetrieve>();
+
+        //logger = new CompositeLogger(factory.CreateLogger<TestUploadAndRetrieve>(), loggerOutput);
+        //this.outputHelper = outputHelper;
+
+        logger.LogInformation("start test " + nameof(TestUploadAndRetrieve));
+        NLog.LogManager.Flush(); 
+
+    }
     DataToBeSent? data;
     string? url;
     string userName = "Andrei";
     string pc = "TestPCAndrei";
+    //private readonly ITestOutputHelper outputHelper;
+
     private async Task Given_PowershellProfile7_IsFound_For_UserName_PC(string UserName,string PC,string value)
     {
+        
         var en = Rock.Create<ISystem_Environment>();
         en.Methods().GetFolderPath(Arg.Any<Environment.SpecialFolder>()).Returns("");
         en.Properties().Getters().UserName().Returns(UserName);
@@ -21,7 +50,7 @@ partial class TestUploadAndRetrieve : FeatureFixture
             .ReadAllTextAsync(Arg.Any<string>(), CancellationToken.None)
             .Returns(Task.FromResult(value));
 
-        DataGatherer gatherer = new(en.Instance(), file.Instance(), path.Instance());
+        DataGatherer gatherer = new(en.Instance(), file.Instance(), path.Instance(), logger);
         data = await gatherer.GetData();
         data.Should().NotBeNull();
         en.Verify();
@@ -41,7 +70,7 @@ partial class TestUploadAndRetrieve : FeatureFixture
         file.Methods().Exists(Arg.Any<string?>()).Returns(false);
 
 
-        DataGatherer gatherer = new(en.Instance(), file.Instance(),path.Instance());
+        DataGatherer gatherer = new(en.Instance(), file.Instance(),path.Instance(), logger);
         data = await gatherer.GetData();
         data.Should().NotBeNull();
         en.Verify();
@@ -56,10 +85,13 @@ partial class TestUploadAndRetrieve : FeatureFixture
             .Callback(it=>Task.FromResult(true));
 
         var api = Rock.Create<IPowershellAPI>();
+        var innerReceive =new ReceiveData(saveData.Instance(), "https://azure.powershellsync.com", logger);
+        var rec = new ReceiveData_Decorator(innerReceive);
         api.Methods().SendData(Arg.Any<IDataToBeSent>())
-            .Callback(a => new ReceiveData(saveData.Instance(),"https://azure.powershellsync.com").SaveData(a));
+            .Callback(a => rec.SaveData(a));
             ; 
-        DataUpload dataUpload = new(api.Instance());
+        DataUpload inner = new(api.Instance(), logger);
+        DataUpload_Decorator dataUpload = new DataUpload_Decorator(inner); 
         dataUpload.data = data!;
         url=await dataUpload.Send();
         api.Verify();
@@ -72,9 +104,11 @@ partial class TestUploadAndRetrieve : FeatureFixture
             .Callback((u, pc, p) => Task.FromResult("text"));
 
         var api = Rock.Create<IPowershellAPI>();
+        var innerRetr = new RetrieveData(retrieve.Instance(), userName, pc, logger);
+        var retr=new RetrieveData_Decorator(innerRetr);
         api.Methods().GetData(userName, pc, pwshNumber)
             .Callback((userName, pc, pwshNumber) => 
-                    new RetrieveData(retrieve.Instance(), userName, pc).GetPwsh(pwshNumber));
+                    retr.GetPwsh(pwshNumber));
         var data = await api.Instance().GetData(userName, pc, pwshNumber);
         data.Should().Be(retValue);
     }
