@@ -7,11 +7,10 @@ partial class TestUploadAndRetrieve : FeatureFixture
     ILogger logger;
     public TestUploadAndRetrieve(ITestOutputHelper outputHelper)
     {
-        var loggerOutput = outputHelper.BuildLoggerFor<TestUploadAndRetrieve>();
+        //var loggerOutput = outputHelper.BuildLoggerFor<TestUploadAndRetrieve>();
         //simple way
         //ILoggerFactory factory = LoggerFactory.Create(builder =>builder.AddNLog());
         NLog.LogFactory f = new NLog.LogFactory();
-        NLog.SetupBuilderExtensions.LoadConfigurationFromFile(f.Setup(),"nlog.config");
         var config = new NLog.Config.LoggingConfiguration(f);
 
         var target = new XunitLoggerTarget(outputHelper);
@@ -20,9 +19,10 @@ partial class TestUploadAndRetrieve : FeatureFixture
         config.LoggingRules.Add(new LoggingRule("*", NLog.LogLevel.Trace, target));
 
         ILoggerFactory factory = LoggerFactory.Create(b => b.AddNLog(config));
-        logger = new CompositeLogger(factory.CreateLogger<TestUploadAndRetrieve>(), loggerOutput);
-        //this.outputHelper = outputHelper;
+        logger = factory.CreateLogger<TestUploadAndRetrieve>();
 
+        //logger = new CompositeLogger(factory.CreateLogger<TestUploadAndRetrieve>(), loggerOutput);
+        //this.outputHelper = outputHelper;
 
         logger.LogInformation("start test " + nameof(TestUploadAndRetrieve));
         NLog.LogManager.Flush(); 
