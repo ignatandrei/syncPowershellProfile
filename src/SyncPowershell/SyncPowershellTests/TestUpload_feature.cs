@@ -1,18 +1,29 @@
-﻿namespace SyncPowershellTests;
+﻿
+using Microsoft.VisualStudio.TestPlatform.TestHost;
+
+namespace SyncPowershellTests;
 partial class TestUploadAndRetrieve : FeatureFixture
 {
     ILogger logger;
     public TestUploadAndRetrieve(ITestOutputHelper outputHelper)
     {
         var loggerOutput = outputHelper.BuildLoggerFor<TestUploadAndRetrieve>();
-        logger=new CompositeLogger(loggerOutput);
-    
+        var config = new NLog.Config.LoggingConfiguration();
+
+        //LogManager.Configuration = config;
+        ILoggerFactory factory = LoggerFactory.Create(builder =>builder.AddNLog());
+        
+        logger = new CompositeLogger(factory.CreateLogger<TestUploadAndRetrieve>(), loggerOutput);
+        //this.outputHelper = outputHelper;
+        logger.LogInformation("start test " + nameof(TestUploadAndRetrieve));
+        NLog.LogManager.Flush();
+
     }
     DataToBeSent? data;
     string? url;
     string userName = "Andrei";
     string pc = "TestPCAndrei";
-    private readonly ITestOutputHelper outputHelper;
+    //private readonly ITestOutputHelper outputHelper;
 
     private async Task Given_PowershellProfile7_IsFound_For_UserName_PC(string UserName,string PC,string value)
     {

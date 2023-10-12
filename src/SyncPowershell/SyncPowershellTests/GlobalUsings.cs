@@ -14,6 +14,7 @@ global using System;
 global using syncPowershellInterfaces;
 global using Xunit.Abstractions;
 global using Microsoft.Extensions.Logging;
+global using NLog.Extensions.Logging;
 
 
 

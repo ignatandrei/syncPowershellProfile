@@ -16,16 +16,16 @@ static internal class GlobalLogging
         if (logger == null) return;
         if (ex != null)
         {
-            logger.LogInformation($"{name} {recognizer.UniqueId}");
+            logger.LogError($"{name} {recognizer.UniqueId}");
             if (recognizer.ValueTypeParameters.Count > 0)
-                logger.LogInformation($"{recognizer.ValueTypeParametersString}");
+                logger.LogError($"{recognizer.ValueTypeParametersString}");
         }
         else
         {
-
-            logger.LogError(ex, $"{name} {recognizer.UniqueId}");
+        
+            logger.LogInformation(ex, $"{name} {recognizer.UniqueId}");
             if (recognizer.ValueTypeParameters.Count > 0)
-                logger.LogError(ex,$"{recognizer.ValueTypeParametersString}");
+                logger.LogInformation(ex,$"{recognizer.ValueTypeParametersString}");
         }
 
     }
