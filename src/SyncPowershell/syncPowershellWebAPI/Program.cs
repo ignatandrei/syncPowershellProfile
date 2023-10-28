@@ -1,7 +1,7 @@
 using System;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
-logger.Error("init main");
+logger.Debug("init main");
 try
 {
     var builder = WebApplication.CreateBuilder(args);
