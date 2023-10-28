@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AMSWebAPI" Version="2023.5.21.1551" />
+    <PackageReference Include="AMS_Base" Version="2023.5.21.1551" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.13" />
+    <PackageReference Include="NetCore2Blockly" Version="7.2023.427.2025" />
+    <PackageReference Include="NetCore7ShortLinks" Version="7.2023.506.10" />
+    <PackageReference Include="NetCoreUsefullEndpoints" Version="7.2023.916.1715" />
+    <PackageReference Include="RSCG_AMS" Version="2023.5.21.1551" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+    <PackageReference Include="RSCG_WebAPIExports" Version="2023.8.16.1958" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	<PackageReference Include="RSCG_TimeBombComment" Version="2023.10.21.806" />
+  </ItemGroup>
+
+</Project>
