@@ -6,6 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 	<ItemGroup>
+		<PackageReference Include="NLog" Version="5.2.5" />
+		<PackageReference Include="NLog.Web.AspNetCore" Version="5.3.5" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 	</ItemGroup>
   <ItemGroup>
@@ -16,8 +18,11 @@
     <PackageReference Include="NetCore2Blockly" Version="7.2023.427.2025" />
     <PackageReference Include="NetCore7ShortLinks" Version="7.2023.506.10" />
     <PackageReference Include="NetCoreUsefullEndpoints" Version="7.2023.916.1715" />
-    <PackageReference Include="RSCG_WebAPIExports" Version="2023.8.16.1958" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
+    <PackageReference Include="RSCG_WebAPIExports" Version="2023.8.16.1958" OutputItemType="Analyzer" ReferenceOutputAssembly="true" />
 	<PackageReference Include="RSCG_TimeBombComment" Version="2023.10.21.806" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
