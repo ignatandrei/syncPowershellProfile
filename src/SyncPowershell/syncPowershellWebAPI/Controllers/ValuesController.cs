@@ -1,7 +1,4 @@
-﻿
-using Refit;
-
-namespace syncPowershellWebAPI.Controllers;
+﻿namespace syncPowershellWebAPI.Controllers;
 [Route("api/[controller]/v{version:apiVersion}/[action]")]
 [ApiController]
 [ApiVersion(1.0)]
@@ -25,4 +22,5 @@ public class DataController : ControllerBase, IPowershellAPI
     {
         throw new NotImplementedException();
     }
+    
 }
