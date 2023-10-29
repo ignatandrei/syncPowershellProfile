@@ -9,12 +9,12 @@ I want to add first the packages that I have created
 ```xml
 <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.13" />
 </ItemGroup>
 <ItemGroup>
   <PackageReference Include="AMSWebAPI" Version="2023.5.21.1551" />
   <PackageReference Include="AMS_Base" Version="2023.5.21.1551" />
 	<PackageReference Include="RSCG_AMS" Version="2023.5.21.1551" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
-	<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.13" />
   <PackageReference Include="NetCore2Blockly" Version="7.2023.427.2025" />
   <PackageReference Include="NetCore7ShortLinks" Version="7.2023.506.10" />
   <PackageReference Include="NetCoreUsefullEndpoints" Version="7.2023.916.1715" />
@@ -95,3 +95,18 @@ app.Run();
 
 ```
 
+Adding those API the number of packages increased from 108 to 157 ( 45% increase! )
+
+The purpose of packages:
+
+UseBlocklyAutomation -  adding macro capabilities to API
+
+AMS - versioning the project with latest git versions
+
+UsefullEndpoints -  adding start date, verifying errors, others ...
+
+WebAPIExports - adding xlsx export to any endpoint
+
+ShortUrl - remembering what the url with html was requested successfully
+
+TimeBombComment - TODO comments with an expiry date
