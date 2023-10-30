@@ -1,4 +1,5 @@
-using System;
+using Asp.Versioning.Routing;
+using Microsoft.Extensions.Configuration;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Debug("init main");
@@ -7,7 +8,8 @@ try
     var builder = WebApplication.CreateBuilder(args);
 
     builder.Services.AddControllers();
-    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+    
+    builder.Services.AddApiVersioning();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
     #region export webapi
