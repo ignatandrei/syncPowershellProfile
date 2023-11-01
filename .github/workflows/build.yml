@@ -24,7 +24,8 @@ jobs:
       with:
         node-version: 18.17.1
         # cache: 'npm'
-    - run: |
+    - name: build documentation
+      run: |
         cd documentation  
         cd syncPowershell       
         npm i
@@ -38,7 +39,7 @@ jobs:
         path: 'documentation/syncPowershell/build/*'
         retention-days: 1
 
-    - name: build .NET 
+    - name: run test
       run: |
         cd  src
         cd SyncPowershell

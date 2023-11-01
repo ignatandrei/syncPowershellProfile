@@ -30,11 +30,16 @@ jobs:
       #       cd src
       #       cd SyncPowershell
       #       dotnet build --configuration Release
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: docusaurusBuild
 
       - name: dotnet publish
         run: |
             cd src
             cd SyncPowershell
+            cd syncPowershellWebAPI
             dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
