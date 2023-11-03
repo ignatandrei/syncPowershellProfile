@@ -62,7 +62,7 @@ jobs:
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
       with:
-        name: .net-app-dev
+        name: .net-app
         path: ${{env.DOTNET_ROOT}}/myapp
         retention-days: 1
 
@@ -77,12 +77,12 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
-          name: .net-app-dev
+          name: .net-app
       
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'syncpowershell-Development'
+          app-name: 'syncpowershell'
           slot-name: 'Development'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E341142E0EE4479EAD9EEA1230445AAA }}
           package: .
