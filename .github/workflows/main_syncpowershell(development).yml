@@ -5,8 +5,7 @@ name: Build and deploy ASP.Net Core app to Azure Web App - syncpowershell
 
 on:
   push:
-    branches:
-      - main
+    tags : 'v*'      
   workflow_dispatch:
 
 jobs:

@@ -31,7 +31,11 @@ jobs:
         npm i
         npm run build 
         ls -lh
-                
+    - name : copy to .net app
+      run: |
+        cp -r documentation/syncPowershell/build/* src/SyncPowershell/syncPowershellWebAPI/wwwroot/help/
+        
+
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.2
       with:
@@ -46,6 +50,42 @@ jobs:
         dotnet restore
         dotnet tool restore
         dotnet r test
+
+    - name: dotnet publish
+      run: |
+          cd src
+          cd SyncPowershell
+          cd syncPowershellWebAPI
+          dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v3
+      with:
+        name: .net-app-dev
+        path: ${{env.DOTNET_ROOT}}/myapp
+        retention-days: 1
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Development'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: .net-app-dev
+      
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'syncpowershell'
+          slot-name: 'Development'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E341142E0EE4479EAD9EEA1230445AAA }}
+          package: .
+
 
     # - name: upload documentation to github pages
     #   if: ${{ github.ref == 'refs/heads/main' }}
