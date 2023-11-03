@@ -82,7 +82,7 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'syncpowershell'
+          app-name: 'syncpowershell-Development'
           slot-name: 'Development'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E341142E0EE4479EAD9EEA1230445AAA }}
           package: .
