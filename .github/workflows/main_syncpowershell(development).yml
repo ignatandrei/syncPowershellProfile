@@ -5,7 +5,8 @@ name: tobedeleted
 
 on:
   push:
-    tags : 'v*'      
+    branches:
+      - main 
   workflow_dispatch:
 
 jobs:
@@ -25,8 +26,12 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-
+        run: |
+          cd src
+          cd SyncPowershell
+          cd syncPowershellWebAPI
+          dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
