@@ -33,6 +33,7 @@ jobs:
         ls -lh
     - name : copy to .net app
       run: |
+        mkdir src/SyncPowershell/syncPowershellWebAPI/wwwroot/help/
         cp -r documentation/syncPowershell/build/* src/SyncPowershell/syncPowershellWebAPI/wwwroot/help/
         
 
