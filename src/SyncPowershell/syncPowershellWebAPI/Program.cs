@@ -1,6 +1,4 @@
 using Asp.Versioning.Routing;
-using Microsoft.Extensions.Configuration;
-
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Debug("init main");
 try
@@ -26,7 +24,7 @@ try
     builder.Logging.ClearProviders();
     builder.Host.UseNLog();
 
-
+    builder.Services.AddScoped<IPowershellAPI, MyPowershellAPI>();
     var app = builder.Build();
 
     // Configure the HTTP request pipeline.

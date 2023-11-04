@@ -9,7 +9,7 @@ global using Asp.Versioning;
 global using Microsoft.AspNetCore.Http;
 global using Microsoft.AspNetCore.Mvc;
 global using syncPowershellInterfaces;
-
+global using WebApiObjects;
 #region AMS
 [assembly: AMS_Base.VersionReleased(Name = "FirstRelease", ISODateTime = "2023-10-28", recordData = AMS_Base.RecordData.Merges)]
 #endregion

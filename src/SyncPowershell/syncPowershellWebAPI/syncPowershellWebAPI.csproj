@@ -34,6 +34,7 @@
   <ItemGroup>
     <ProjectReference Include="..\syncPowershellInterfaces\syncPowershellInterfaces.csproj" />
     <ProjectReference Include="..\syncPowershellObjects\syncPowershellObjects.csproj" />
+    <ProjectReference Include="..\WebApiObjects\WebApiObjects.csproj" />
   </ItemGroup>
 
 </Project>

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "syncPowershellObjects", "sy
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "syncPowershellInterfaces", "syncPowershellInterfaces\syncPowershellInterfaces.csproj", "{A5167396-3D90-4E84-AA17-6C16F9C153C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "syncPowershellWebAPI", "syncPowershellWebAPI\syncPowershellWebAPI.csproj", "{267B516D-FC0E-4BCE-B916-E382D8A967DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "syncPowershellWebAPI", "syncPowershellWebAPI\syncPowershellWebAPI.csproj", "{267B516D-FC0E-4BCE-B916-E382D8A967DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiObjects", "WebApiObjects\WebApiObjects.csproj", "{32DEE32A-5F50-4B63-9AC7-2338121F536B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{267B516D-FC0E-4BCE-B916-E382D8A967DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{267B516D-FC0E-4BCE-B916-E382D8A967DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{267B516D-FC0E-4BCE-B916-E382D8A967DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32DEE32A-5F50-4B63-9AC7-2338121F536B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32DEE32A-5F50-4B63-9AC7-2338121F536B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32DEE32A-5F50-4B63-9AC7-2338121F536B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32DEE32A-5F50-4B63-9AC7-2338121F536B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
