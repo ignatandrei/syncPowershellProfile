@@ -21,11 +21,13 @@ public class DataGatherer
         DataToBeSent dataToBeSent = new ();
         dataToBeSent.UserName=environment.UserName;
         dataToBeSent.PC = environment.MachineName;
-        if (file.Exists(powershell7Profile))
-        {
-            dataToBeSent.Powershell = await file.ReadAllTextAsync(powershell7Profile, CancellationToken.None);
-            dataToBeSent.PowershellNumber = 7;
-        }
+        if (!file.Exists(powershell7Profile))
+            throw new PowershellProfileNotExistsException(powershell7Profile);
+            
+        dataToBeSent.Powershell = await file.ReadAllTextAsync(powershell7Profile, CancellationToken.None);
+        dataToBeSent.PowershellNumber = 7;
+        
+        
         return dataToBeSent;
     }
 }

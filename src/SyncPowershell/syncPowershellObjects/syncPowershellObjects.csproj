@@ -23,6 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\syncPowershellException\syncPowershellException.csproj" />
 	  <ProjectReference Include="..\syncPowershellInterfaces\syncPowershellInterfaces.csproj" />
 	</ItemGroup>
 

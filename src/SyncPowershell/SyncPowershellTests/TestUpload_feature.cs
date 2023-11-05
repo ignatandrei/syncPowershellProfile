@@ -71,8 +71,8 @@ partial class TestUploadAndRetrieve : FeatureFixture
 
 
         DataGatherer gatherer = new(en.Instance(), file.Instance(),path.Instance(), logger);
-        data = await gatherer.GetData();
-        data.Should().NotBeNull();
+        var X=async ()=> (await gatherer.GetData());
+        await X.Should().ThrowAsync<PowershellProfileNotExistsException>();
         en.Verify();
         path.Verify();
         file.Verify();
