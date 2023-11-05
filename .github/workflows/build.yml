@@ -52,22 +52,6 @@ jobs:
         dotnet tool restore
         dotnet r test
 
-    - name: dotnet publish
-      run: |
-          cd src
-          cd SyncPowershell
-          cd syncPowershellWebAPI
-          dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-
-    - name: Deploy to Azure Web App
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'syncpowershell'
-        slot-name: 'Development'
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E341142E0EE4479EAD9EEA1230445AAA }}
-        package: '${{env.DOTNET_ROOT}}/myapp'
-
-
     # - name: upload documentation to github pages
     #   if: ${{ github.ref == 'refs/heads/main' }}
     #   run: |

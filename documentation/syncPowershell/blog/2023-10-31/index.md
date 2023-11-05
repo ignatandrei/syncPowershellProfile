@@ -89,3 +89,21 @@ public async Task<DataToBeSent> GetData()
     return dataToBeSent;
 }
 ```
+
+
+Also the test will be modified from
+```csharp
+DataGatherer gatherer = new(en.Instance(), file.Instance(),path.Instance(), logger);
+data = await gatherer.GetData();
+data.Should().NotBeNull();
+```
+
+to 
+
+
+```csharp
+DataGatherer gatherer = new(en.Instance(), file.Instance(),path.Instance(), logger);
+var X=async ()=> (await gatherer.GetData());
+await X.Should().ThrowAsync<PowershellProfileNotExistsException>();
+```
+
