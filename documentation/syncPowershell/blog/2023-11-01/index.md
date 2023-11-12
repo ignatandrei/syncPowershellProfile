@@ -79,3 +79,8 @@ And now the projects can be like this
 
 
 ![Target differences](/img/diffTarget.png)
+
+
+https://github.com/dotnet/sdk/issues/11432
+
+delete the %USERPROFILE%\.dotnet\toolResolverCache

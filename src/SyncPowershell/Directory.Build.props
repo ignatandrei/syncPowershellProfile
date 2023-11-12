@@ -6,7 +6,7 @@
     </PropertyGroup>
     <PropertyGroup>
         <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
-        <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)/GX</CompilerGeneratedFilesOutputPath>
+        <CompilerGeneratedFilesOutputPath>obj/GX</CompilerGeneratedFilesOutputPath>
     </PropertyGroup>
 
 </Project>
