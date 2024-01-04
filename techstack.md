@@ -44,7 +44,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [ignatandrei/syncPowershellProfile](https://github.com/ignatandrei/syncPowershellProfile)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|24<br/>Tools used|12/14/23 <br/>Report generated|
+|25<br/>Tools used|01/04/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -202,14 +202,15 @@ Full tech stack [here](/techstack.md)
 </table>
 
 
-## <img src='https://img.stackshare.io/group.svg' /> Open source packages (8)</h2>
+## <img src='https://img.stackshare.io/group.svg' /> Open source packages (9)</h2>
 
-## <img width='24' height='24' src='https://img.stackshare.io/service/2637/6I3oEOP4_400x400.jpg'/> NuGet (6)
+## <img width='24' height='24' src='https://img.stackshare.io/service/2637/6I3oEOP4_400x400.jpg'/> NuGet (7)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
 |[FluentAssertions](https://www.nuget.org/FluentAssertions)|N/A|11/12/23|Andrei Ignat |Apache-2.0|N/A|
 |[Microsoft.Extensions.Logging.Abstractions](https://www.nuget.org/Microsoft.Extensions.Logging.Abstractions)|N/A|11/12/23|Andrei Ignat |Apache-2.0|N/A|
+|[NLog](https://www.nuget.org/NLog)|N/A|11/12/23|Andrei Ignat |BSD-3-Clause|N/A|
 |[NLog.Extensions.Logging](https://www.nuget.org/NLog.Extensions.Logging)|N/A|11/12/23|Andrei Ignat |BSD-3-Clause|N/A|
 |[NLog.Web.AspNetCore](https://www.nuget.org/NLog.Web.AspNetCore)|N/A|11/12/23|Andrei Ignat |BSD-3-Clause|N/A|
 |[Swashbuckle.AspNetCore](https://www.nuget.org/Swashbuckle.AspNetCore)|N/A|11/12/23|Andrei Ignat |BSD-3-Clause|N/A|
