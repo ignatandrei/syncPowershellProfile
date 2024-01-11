@@ -12,8 +12,6 @@ ignatandrei/syncPowershellProfile is built on the following main stack:
 - [xUnit](http://xunit.github.io/) – Testing Frameworks
 - [GitHub Actions](https://github.com/features/actions) – Continuous Integration
 - [Refit](https://reactiveui.github.io/refit/) – API Tools
-- [LangChain](https://github.com/hwchase17/langchain) – Large Language Model Tools
-- [pgvector](https://github.com/pgvector/pgvector/) – Database Tools
 
 Full tech stack [here](/techstack.md)
 
@@ -32,8 +30,6 @@ ignatandrei/syncPowershellProfile is built on the following main stack:
 - <img width='25' height='25' src='https://img.stackshare.io/service/3077/ca5a327feb49ddfe1f4b11548907e5a1_400x400.png' alt='xUnit'/> [xUnit](http://xunit.github.io/) – Testing Frameworks
 - <img width='25' height='25' src='https://img.stackshare.io/service/11563/actions.png' alt='GitHub Actions'/> [GitHub Actions](https://github.com/features/actions) – Continuous Integration
 - <img width='25' height='25' src='https://img.stackshare.io/service/20926/default_f8fb986d889eb12dfac827180a7901396f6d3b82.png' alt='Refit'/> [Refit](https://reactiveui.github.io/refit/) – API Tools
-- <img width='25' height='25' src='https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg' alt='LangChain'/> [LangChain](https://github.com/hwchase17/langchain) – Large Language Model Tools
-- <img width='25' height='25' src='https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png' alt='pgvector'/> [pgvector](https://github.com/pgvector/pgvector/) – Database Tools
 
 Full tech stack [here](/techstack.md)
 
@@ -44,7 +40,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [ignatandrei/syncPowershellProfile](https://github.com/ignatandrei/syncPowershellProfile)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|25<br/>Tools used|01/05/24 <br/>Report generated|
+|22<br/>Tools used|01/11/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -85,19 +81,6 @@ Full tech stack [here](/techstack.md)
   <sub><a href="https://reactjs.org/">React</a></sub>
   <br>
   <sub>v17.0.2</sub>
-</td>
-
-</tr>
-</table>
-
-## <img src='https://img.stackshare.io/databases.svg'/> Data (1)
-<table><tr>
-  <td align='center'>
-  <img width='36' height='36' src='https://img.stackshare.io/service/109221/default_b888cdf5617d936aa6aacf130911906955508639.png' alt='pgvector'>
-  <br>
-  <sub><a href="https://github.com/pgvector/pgvector/">pgvector</a></sub>
-  <br>
-  <sub></sub>
 </td>
 
 </tr>
@@ -164,25 +147,9 @@ Full tech stack [here](/techstack.md)
 </tr>
 </table>
 
-## Other (4)
+## Other (2)
 <table><tr>
   <td align='center'>
-  <img width='36' height='36' src='https://img.stackshare.io/service/2270/no-img-open-source.png' alt='HTML'>
-  <br>
-  <sub><a href="http://">HTML</a></sub>
-  <br>
-  <sub></sub>
-</td>
-
-<td align='center'>
-  <img width='36' height='36' src='https://img.stackshare.io/service/48790/default_5b6c6b73f1ff3775c85d2a1ba954cb87e30cbf13.jpg' alt='LangChain'>
-  <br>
-  <sub><a href="https://github.com/hwchase17/langchain">LangChain</a></sub>
-  <br>
-  <sub></sub>
-</td>
-
-<td align='center'>
   <img width='36' height='36' src='https://img.stackshare.io/service/9672/nlog_logo_square_normal.png' alt='NLog'>
   <br>
   <sub><a href="https://nlog-project.org/">NLog</a></sub>
